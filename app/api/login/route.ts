@@ -30,4 +30,4 @@ export async function POST(request: Request) {
     secure: true,
   });
   return response;
-}
+};
