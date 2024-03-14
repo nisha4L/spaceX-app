@@ -1,6 +1,11 @@
+"use client";
+
+import { SWRConfig } from "swr";
+
 import Footer from "./footer";
 import Header from "./header";
-import Navbar from "./navbar";
+import NavBar from "./navbar";
+import fetcher from "../util/fetcher";
 
 export default function PrivateLayout({
   children,
@@ -8,11 +13,15 @@ export default function PrivateLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
-      <Header />
-      <Navbar />
-      <main>{children}</main>
-      <Footer/>
-    </div>
+    <SWRConfig value={{ fetcher: fetcher }}>
+      <div className="flex flex-col min-h-screen max-w-md m-auto items-center justify-center">
+        <Header />
+        <NavBar />
+        <main className="w-full p-5 bg-slate-800 rounded-lg my-2">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </SWRConfig>
   );
 }
