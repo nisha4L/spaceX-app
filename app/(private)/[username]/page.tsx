@@ -1,12 +1,13 @@
 "use client";
 
-import UserPageHeader from "./user-page-header"
+import PostContainer from "@/app/components/post-container";
+import UserPageHeader from "./user-page-header";
 
 export default function UserPage({ params }: { params: { username: string } }) {
-    return (
-      <div>
-        <UserPageHeader username={params.username} />
-        <div>Post Container</div>
-      </div>
-    );
+  return (
+    <div>
+      <UserPageHeader username={params.username} />
+      <PostContainer username={params.username} />
+    </div>
+  );
 }
