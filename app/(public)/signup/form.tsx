@@ -34,7 +34,7 @@ function Form() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-2 p-5 max-w-xs w-full dark:dark:bg-slate-800 bg-slate-300 bg-slate-300 rounded-lg"
+      className="flex flex-col gap-2 p-5 max-w-xs w-full dark:dark:bg-slate-800  bg-slate-300 rounded-lg"
     >
       <div className="text-center">
         <h3 className="font-semibold">Sign Up</h3>
